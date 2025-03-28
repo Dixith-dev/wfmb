@@ -45,4 +45,14 @@ window.addEventListener('scroll', () => {
     if (hero) {
         hero.style.backgroundPositionY = `${window.scrollY * 0.3}px`;
     }
+    
+    // Add staggered delays to contact form inputs
+    document.querySelectorAll('#contact form > *').forEach((el, i) => {
+        el.style.setProperty('--i', i);
+    });
+
+    // Add staggered delays to techniques cards
+    document.querySelectorAll('#techniques > div > div').forEach((card, i) => {
+        card.style.animationDelay = `${i * 0.3 + 0.3}s`;
+    });
 });
